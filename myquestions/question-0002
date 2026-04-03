@@ -1,0 +1,16 @@
+Pregunta 2: Análisis estadístico y segmentación con Pandas y NumPy
+
+Tu tarea es crear una función llamada segmentar_clientes(df) que reciba un DataFrame con las columnas cliente_id, edad, 
+gasto_total, num_compras, dias_desde_ultima_compra y ciudad, y retorne un DataFrame resumen aplicando las siguientes transformaciones:
+
+1. Crear una columna gasto_promedio_por_compra calculada como gasto_total / num_compras.
+2. Crear una columna segmento asignando una categoría a cada cliente según su gasto_total usando los siguientes percentiles:
+   a) "Bronce" → por debajo del percentil 33
+   b) "Plata" → entre el percentil 33 y 66
+   c) "Oro" → por encima del percentil 66
+3. Crear una columna cliente_reciente de tipo booleano que sea True si dias_desde_ultima_compra es menor o igual a 30.
+4. Retornar un DataFrame resumen agrupado por ciudad y segmento que contenga:
+   a) total_clientes: conteo de clientes
+   b) gasto_promedio: media de gasto_total
+   c) pct_recientes: porcentaje de clientes recientes (entre 0 y 100)
+5. Todo ordenado por ciudad y segmento alfabéticamente, con el índice reiniciado.
