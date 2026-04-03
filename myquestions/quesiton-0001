@@ -1,0 +1,15 @@
+Pregunta 1: Limpieza y transformación de datos con Pandas
+
+Tu tarea es crear una función llamada limpiar_y_resumir_ventas(df) que reciba un DataFrame 
+con las columnas fecha, producto, categoria, precio, cantidad y descuento, y retorne un nuevo 
+DataFrame con las siguientes transformaciones aplicadas:
+
+1. Eliminar filas duplicadas (considera duplicado si fecha, producto y precio son iguales).
+2. Rellenar valores nulos:
+   a) Precio: con la mediana del precio por categoria.
+   b) cantidad: con el valor 1.
+   c) descuento: con 0.0.
+   d) Filas donde producto o fecha sean nulos deben eliminarse.
+3. Crear una columna nueva llamada total_venta calculada como: precio * cantidad * (1 - descuento)
+4. onvertir la columna fecha al tipo datetime.
+5. Retornar el DataFrame resultante ordenado por fecha de forma ascendente, con el índice reiniciado.
