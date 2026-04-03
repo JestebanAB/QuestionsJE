@@ -1,0 +1,18 @@
+Pregunta 4: Pipeline de regresión con validación cruzada y Scikit-learn
+
+Tu tarea es crear una función llamada pipeline_regresion(X, y) que reciba una matriz de features X y un vector objetivo y,
+y retorne un diccionario con los resultados siguiendo estos pasos:
+
+1. Preprocesar las features construyendo un Pipeline de sklearn que encadene:
+   a) SimpleImputer con estrategia de la mediana para manejar nulos.
+   b) StandardScaler para escalar.
+2. Comparar dos modelos usando validación cruzada de 5 folds (cross_val_score) con métrica neg_mean_squared_error:
+   a) Ridge con alpha=1.0
+   b) GradientBoostingRegressor con n_estimators=100 y random_state=42
+3. Seleccionar automáticamente el mejor modelo según el menor RMSE promedio en validación cruzada.
+4. Entrenar el modelo ganador sobre el 80% de los datos (split con random_state=42) aplicando el pipeline de preprocesamiento.
+5. Retornar un diccionario con las siguientes claves:
+   a) "mejor_modelo": nombre del modelo ganador como string ("Ridge" o "GradientBoosting").
+   b) "rmse_cv": RMSE promedio en validación cruzada del modelo ganador (float redondeado a 4 decimales).
+   c) "rmse_test": RMSE sobre el conjunto de prueba (float redondeado a 4 decimales).
+   d) "pipeline": el objeto Pipeline completo entrenado con el mejor modelo.
