@@ -1,0 +1,14 @@
+Pregunta 3: Entrenamiento y evaluación de un modelo de clasificación con Scikit-learn
+
+Tu tarea es crear una función llamada entrenar_clasificador(X, y) que reciba una matriz de features X y un vector de etiquetas y,
+y retorne un diccionario con los resultados del entrenamiento siguiendo estos pasos:
+
+1. Dividir los datos en entrenamiento y prueba con un 80/20, usando random_state=42.
+2. Escalar las features usando StandardScaler.
+3. Entrenar un RandomForestClassifier con n_estimators=100 y random_state=42 sobre los datos de entrenamiento escalados.
+4. Evaluar el modelo sobre el conjunto de prueba y retornar un diccionario con las siguientes claves:
+   a) "accuracy": exactitud del modelo (float redondeado a 4 decimales).
+   b) "reporte": reporte de clasificación como string (classification_report).
+   c) "importancia_features": array de NumPy con la importancia de cada feature.
+   d) "modelo": el objeto del modelo entrenado.
+   e) "scaler": el objeto scaler ajustado.
